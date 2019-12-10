@@ -65,8 +65,11 @@ const UserSignUpPage = () => {
                 alert("Success!");
                 window.location.href="#/login"
             }
+            else if(res.data.ret_code == 1){
+                alert("Signup Failed. This email has already been used.")
+            }
             else{
-                alert("Signup Failed!")
+                alert("Invalid email!")
             }
         })
 
