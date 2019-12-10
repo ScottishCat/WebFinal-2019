@@ -30,17 +30,19 @@ const SearchPage = () => {
     const [logged, setLog] = useState(false)
     const classes = useStyle();
     let {userId} = useParams();
+    let resultLists;
     useEffect(() => {
         if (userId && userId !== 'undefined'){
             setLog(true)
         }
+        resultLists = JSON.parse(localStorage.getItem("searchList"))
     },[]);
 
     return (
         <div>
             <TopBar logged={logged} setLog={setLog} userId={userId}/>
             <div className={classes.solid}></div>
-            <ResultList userId={userId}/>
+            <ResultList userId={userId} resultLists={resultLists}/>
             {/* <Pagination perPage={10} totalPages={100} paginate={()=>{console.log('Hi')}}/> */}
             <div className={classes.footer}>
                 <p>Copyright © 2019-03-12 Yummy Inc.</p>

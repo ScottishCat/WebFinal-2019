@@ -105,6 +105,7 @@ const TopBar = (props) => {
                 localStorage.setItem("searchList",JSON.stringify(res.data));
                 console.log(JSON.parse(localStorage.getItem("searchList")))
                 window.location.href=`#/search/${props.userId}`
+                window.location.reload();
             })
         }
     }
@@ -143,7 +144,7 @@ const TopBar = (props) => {
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.AppBar}>
                 <Toolbar>
-                    <Link className={classes.title} to={`#/main/${props.userId}`}>
+                    <Link className={classes.title} to={`/main/${props.userId}`}>
                         Yummy
                     </Link>
                     <div className={classes.search}>
@@ -191,12 +192,12 @@ const TopBar = (props) => {
                             <Button
                                 color="inherit"
                                 className={classes.Button}
-                                onClick={() => { props.history.push('#/login') }}>
+                                onClick={() => { window.location.href='#/login' }}>
                                 Login
                             </Button>
                             <Button color="inherit"
                                 className={classes.Button}
-                                onClick={() => { props.history.push('#/signup') }}>
+                                onClick={() => { window.location.href='#/signup' }}>
                                 Signup
                             </Button>
                         </div>
