@@ -1,3 +1,6 @@
+// This page referenced the design from material-ui start template -- signup
+// Functions are added and slight CSS code are used to make it match the design 
+// of the whole app
 import React, {useRef} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import AccountCircle from '@material-ui/icons/AccountCircle';

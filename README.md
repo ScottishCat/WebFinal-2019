@@ -1,68 +1,499 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Skip to content
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![img](https://github.githubassets.com/images/search-key-slash.svg)
 
-### `npm test`
+Pull requests
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Issues
 
-### `npm run build`
+[Marketplace](https://github.com/marketplace)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Explore
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![@ScottishCat](https://avatars1.githubusercontent.com/u/48732358?s=40&v=4) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Learn Git and GitHub without any code!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
 
-### Analyzing the Bundle Size
+Read the guide
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-  Unwatch [1](https://github.com/ScottishCat/WebFinal-2019/watchers)
+-  Star[0](https://github.com/ScottishCat/WebFinal-2019/stargazers)
+-  Fork[0](https://github.com/ScottishCat/WebFinal-2019/network/members)
 
-### Advanced Configuration
+# [ScottishCat](https://github.com/ScottishCat)/**WebFinal-2019**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+ 
 
-### `npm run build` fails to minify
+Code
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+ 
+
+Issues
+
+ 
+
+0
+
+
+
+ 
+
+Pull requests
+
+ 
+
+0
+
+
+
+ 
+
+Actions
+
+
+
+ 
+
+Projects
+
+ 
+
+0
+
+
+
+ 
+
+Wiki
+
+
+
+ 
+
+Security
+
+
+
+ 
+
+Insights
+
+
+
+ 
+
+Settings
+
+[WebFinal-2019](https://github.com/ScottishCat/WebFinal-2019)/[Cancel](https://github.com/ScottishCat/WebFinal-2019/blob/master/README.md)
+
+ Edit file  Preview changes
+
+​                        Spaces Tabs                                            2 3 4 8                                            No wrap Soft wrap                    
+
+
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+1
+
+```
+# Project Report
+```
+
+2
+
+```
+
+```
+
+3
+
+```
+## Project Name : Yummy, a Yelp clone
+```
+
+4
+
+```
+
+```
+
+5
+
+```
+## Team Member : 
+```
+
+6
+
+```
+
+```
+
+7
+
+```
+Zhiyu Shen (zhs56@pitt.edu), Tong Wang (tow19@pitt.edu), Wenting Wang (wew77@pitt.edu), Sweta Bhupendra Rawal (swr22@pitt.edu)
+```
+
+8
+
+```
+
+```
+
+9
+
+```
+## 1. Introduction
+```
+
+10
+
+```
+
+```
+
+11
+
+```
+This is a web application called “Yum, a yelp clone” which has two different version (Customer & Business). It provides service for users to search for business and create reviews on businesses, also allows business holders to create a new business, update or delete it, and check customer reviews for its business. 
+```
+
+12
+
+```
+
+```
+
+13
+
+```
+## 2. Objective
+```
+
+14
+
+```
+
+```
+
+15
+
+```
+### 2.1 User (Customer) Version: 
+```
+
+16
+
+```
+
+```
+
+17
+
+```
+There are some functions for customer version.
+```
+
+18
+
+```
+
+```
+
+19
+
+```
+- Search businesses by name;
+```
+
+20
+
+```
+- Browse businesses those have top 5 review counts by city
+```
+
+21
+
+```
+- Sign up/login in
+```
+
+22
+
+```
+- User login in with Google OAuth
+```
+
+23
+
+```
+- Browse the business and its reviews
+```
+
+24
+
+```
+- Create, or delete a review for a specific business, update the user review count, business review counts, business stars at the same time
+```
+
+25
+
+```
+
+```
+
+26
+
+```
+### 2.2 User (not Customer) Version:
+```
+
+27
+
+```
+
+```
+
+28
+
+```
+- Browse its reviews
+```
+
+29
+
+```
+
+```
+
+30
+
+```
+## 3. Team member's contributions
+```
+
+31
+
+```
+
+```
+
+32
+
+```
+### 3.1 User Frontend (Zhiyu Shen)
+```
+
+33
+
+```
+
+```
+
+34
+
+```
+- There are 2 kind of uers, member user and not member user. This two kind of users user different pattern on our website
+```
+
+35
+
+```
+- Choosing mobile first strategy to design web page. Start sketching and prototyping the smallest screen first and work our way up to larger screens. 
+```
+
+36
+
+```
+
+```
+
+37
+
+```
+#### 3.1.1 Login in/ Sign in Page 
+```
+
+38
+
+```
+
+```
+
+39
+
+```
+#### 3.1.2 Index page
+```
+
+40
+
+```
+
+```
+
+41
+
+```
+#### 3.1.3 Review page
+```
+
+42
+
+```
+
+```
+
+43
+
+```
+### 3.2 User Backend (Tong Wang)
+```
+
+44
+
+```
+
+```
+
+45
+
+```
+#### 3.2.1 APIs for user 
+```
+
+46
+
+```
+
+```
+
+47
+
+```
+- POST(‘/login’) : user login and validation identity
+```
+
+48
+
+```
+- POST(‘/signup’) : user signin, save new user into databse
+```
+
+49
+
+```
+- POST(‘/byBname’) : userpage search business by business name
+```
+
+50
+
+```
+
+```
+
+51
+
+```
+#### 3.2.2 APIs for photo
+```
+
+52
+
+```
+
+```
+
+53
+
+```
+- POST(‘/photoId’) : find photoId by business_id
+```
+
+54
+
+```
+- GET(‘/photo/:photo_id’) : get photo by photoID
+```
+
+55
+
+```
+
+```
+
+56
+
+```
+#### 3.2.3 APIs for review
+```
+
+
+
+
+
+[![@ScottishCat](https://avatars3.githubusercontent.com/u/48732358?s=96&v=4)](https://github.com/ScottishCat)
+
+### Commit changes
+
+Commit summary
+
+Optional extended description
+
+
+
+ Commit directly to the master branch.
+
+ Create a **new branch** for this commit and start a pull request. [Learn more about pull requests.](https://help.github.com/articles/using-pull-requests)
+
+ 
+
+Cancel
+
+- © 2019 GitHub, Inc.
+- [Terms](https://github.com/site/terms)
+- [Privacy](https://github.com/site/privacy)
+- [Security](https://github.com/security)
+- [Status](https://githubstatus.com/)
+- [Help](https://help.github.com/)
+
+- [Contact GitHub](https://github.com/contact)
+- [Pricing](https://github.com/pricing)
+- [API](https://developer.github.com/)
+- [Training](https://training.github.com/)
+- [Blog](https://github.blog/)
+- [About](https://github.com/about)

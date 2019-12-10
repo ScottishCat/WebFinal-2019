@@ -1,3 +1,7 @@
+// This component referenced the design of material-ui example -- Single line Grid list
+// All images contains the author and are downloaded from the following link:
+// https://github.com/mui-org/material-ui/tree/master/docs/static/images/grid-list
+
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
