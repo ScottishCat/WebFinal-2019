@@ -23,15 +23,16 @@ There are some functions for customer version.
 - Browse the business and its reviews
 - Create, or delete a review for a specific business, update the user review count, business review counts, business stars at the same time
 
-### 2.2 Business Version:
+### 2.2 User (not Customer) Version:
 
-- Sign up/login in
 - Browse its reviews
-- Create, update or delete a business
 
 ## 3. Team member's contributions
 
 ### 3.1 User Frontend (Zhiyu Shen)
+
+- There are 2 kind of uers, member user and not member user. This two kind of users user different pattern on our website
+- Choosing mobile first strategy to design web page. Start sketching and prototyping the smallest screen first and work our way up to larger screens. 
 
 #### 3.1.1 Login in/ Sign in Page 
 
@@ -41,18 +42,18 @@ There are some functions for customer version.
 
 ### 3.2 User Backend (Tong Wang)
 
-#### 3.2.1 All APIs for user 
+#### 3.2.1 APIs for user 
 
 - POST(‘/login’) : user login and validation identity
 - POST(‘/signup’) : user signin, save new user into databse
 - POST(‘/byBname’) : userpage search business by business name
 
-#### 3.2.2 All APIs for photo
+#### 3.2.2 APIs for photo
 
 - POST(‘/photoId’) : find photoId by business_id
 - GET(‘/photo/:photo_id’) : get photo by photoID
 
-#### 3.2.3 All APIs for review
+#### 3.2.3 APIs for review
 
 - GET(/review/business/:business_id): get Reviews by a specific business
 - GET(/review/user/:uid): get Reviews by a specific user
@@ -60,29 +61,23 @@ There are some functions for customer version.
 - POST(newReview): create a new review, update user review count and business review count 
 - DELETE(/reviewD/:rid): user delete a review and update the review count in user review_counts and business review_counts
 
-### 3.3 Business Backend and Google Oauth (Wenting Wang)
+### 3.3 User(not member) (Wenting Wang)
 
-This part is concluded by 2 parts: First is the business backend. all Apis for business and photo.
-
-#### 3.3.1 All Apis for business
+#### 3.3.1 Apis for business
 
 - POST(/cityB): Find 5 business by city name, sort by review counts
 - GET(/business): GET all business information, limit 5
 - GET(/business/id/:business_id): GET a specific business, Business Login System
 - PUT(/business): UPDATE a specific business, just name, address, city, state, hour, is_open could be updated
 
-#### 3.3.2 All Apis for photo
+#### 3.3.2 Apis for photo
 
 - GET(/photo/:business_id): Get all photos for a specific Business
 - POST(photo): Create a new phone for a specific photo
 - PUT(/photo/:id): Update a specific photo
 - DELETE(/photo/:id): Delete a specific photo
 
-#### 3.3.3 Google Oauth.
-
-### 3.4  Business Frontend(Sweta Bhupendra Rawal)
-
-After a business user logs into the system, the business dashboard appears where all the business relevant information can be seen. The dashboard shows,
+### 3.4  User(not member) Frontend(Sweta Bhupendra Rawal)
 
 - Total number of reviews received
 - Average rating that is stars
@@ -212,7 +207,6 @@ In the creation, We used  CORS to deploy different cross-site HTTP requests, and
 - How to fetch data in React. (2018, July). Retrieve December 10, 2019, from https://www.robinwieruch.de/react-fetching-data.
 - React: A JavaScript library for building user interfaces. (2019, December). Retrieve December 10, 2019, https://reactjs.org/.
 - Subbu A. (2010), RESTful Web Services Cookbook. Retrieved from http://webapps.me.uk/download.php?f=restful-web-services-cookbook.pdf.
-
 
 
 
