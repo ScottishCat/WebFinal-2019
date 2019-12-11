@@ -35,9 +35,12 @@ There are some functions for customer version.
 - Choosing mobile first strategy to design web page. Start sketching and prototyping the smallest screen first and work our way up to larger screens. 
 
 #### 3.1.1 Login in/ Sign in Page 
+- Email validation
+- User Token used to retrieve user indentity
 
-#### 3.1.2 Index page
-
+#### 3.1.2 Main page
+- Main page includes search bar, gallery and top business by city
+- For visitors and users, the top bar shows in different way
 #### 3.1.3 Review page
 
 ### 3.2 User Backend (Tong Wang)
@@ -48,10 +51,15 @@ There are some functions for customer version.
 - POST(‘/signup’) : user signin, save new user into databse
 - POST(‘/byBname’) : userpage search business by business name
 
-#### 3.2.2 APIs for photo
+#### 3.2.2 APIs for photo 
+(real photo is not used in the submitted version for Glitch does not support batch upload of images)
 
 - POST(‘/photoId’) : find photoId by business_id
 - GET(‘/photo/:photo_id’) : get photo by photoID
+- GET(/photo/:business_id): Get all photos for a specific Business
+- POST(photo): Create a new phone for a specific photo
+- PUT(/photo/:id): Update a specific photo
+- DELETE(/photo/:id): Delete a specific photo
 
 #### 3.2.3 APIs for review
 
@@ -70,20 +78,9 @@ There are some functions for customer version.
 - GET(/business/id/:business_id): GET a specific business, Business Login System
 - PUT(/business): UPDATE a specific business, just name, address, city, state, hour, is_open could be updated
 
-#### 3.3.2 Apis for photo
 
-- GET(/photo/:business_id): Get all photos for a specific Business
-- POST(photo): Create a new phone for a specific photo
-- PUT(/photo/:id): Update a specific photo
-- DELETE(/photo/:id): Delete a specific photo
+### 3.4 Frontend(Sweta Bhupendra Rawal)
 
-### 3.4  User(not member) Frontend(Sweta Bhupendra Rawal)
-
-- Total number of reviews received
-- Average rating that is stars
-- The location description of the business
-- Contact information 
-- Reviews received with the date and time as to when it was received. The business cannot see the which user gave what review. The reviews is limited to 3 reviews.
 
 ## 4. Technical Architecture
 
@@ -127,11 +124,15 @@ Our database is 8 GB. We uploaded to MongoDB cloud. We created 4 data models in 
 
 #### 4.2.3 Log-in and Sign-up 
 
-We created 2 ways: one is Google OAuth, which is introduced above, and another is secure password with code below 
+How we deal with login & signup:
 
 ```
 router.post('/login', function(req, res){
    User.findOne({email : req.body.email}, function(err, u) {
+   const reg = /^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+  if (!reg.test(req.body.email)) {
+    res.json({ ret_code: 2, msg: "invalid email" });
+  }
         //console.log(req.body)
         if (err){
             res.json({err:err})
