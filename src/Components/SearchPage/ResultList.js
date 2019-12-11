@@ -105,7 +105,7 @@ const ResultList = (props) => {
             // console.log(typeof localStorage.getItem("lat"))
             // console.log(localStorage.getItem("lat"))
             // console.log(localStorage.getItem("lng"))
-            window.location.href=`/detail/${bid}/${props.userId}`
+            window.location.href=`#/detail/${bid}/${props.userId}`
             })
         .catch(err=>console.log(err))
     }

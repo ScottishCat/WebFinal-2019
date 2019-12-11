@@ -104,7 +104,7 @@ const TopBar = (props) => {
                 // console.log(res.data);
                 localStorage.setItem("searchList",JSON.stringify(res.data));
                 console.log(JSON.parse(localStorage.getItem("searchList")))
-                window.location.href=`/search/${props.userId}`
+                window.location.href=`#/search/${props.userId}`
             })
         }
     }
@@ -117,22 +117,22 @@ const TopBar = (props) => {
 
     const goLogin = (e) => {
         e.preventDefault();
-        window.location.href="/login";
+        window.location.href="#/login";
     }
 
     const goSignup = (e) => {
         e.preventDefault();
-        window.location.href="/signup";
+        window.location.href="#/signup";
     }
 
     const goProfile = (e) => {
         e.preventDefault();
-        window.location.href=`/profile/${props.userId}`
+        window.location.href=`#/profile/${props.userId}`
     }
 
     const goHome = (e) => {
         e.preventDefault();
-        window.location.href=`/main/${props.userId}`
+        window.location.href=`#/main/${props.userId}`
     }
 
     const handleClose = () => {
@@ -143,7 +143,7 @@ const TopBar = (props) => {
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.AppBar}>
                 <Toolbar>
-                    <Link className={classes.title} to='/main/a/a'>
+                    <Link className={classes.title} to={`#/main/${props.userId}`}>
                         Yummy
                     </Link>
                     <div className={classes.search}>
@@ -191,12 +191,12 @@ const TopBar = (props) => {
                             <Button
                                 color="inherit"
                                 className={classes.Button}
-                                onClick={() => { props.history.push('/login') }}>
+                                onClick={() => { props.history.push('#/login') }}>
                                 Login
                             </Button>
                             <Button color="inherit"
                                 className={classes.Button}
-                                onClick={() => { props.history.push('/signup') }}>
+                                onClick={() => { props.history.push('#/signup') }}>
                                 Signup
                             </Button>
                         </div>

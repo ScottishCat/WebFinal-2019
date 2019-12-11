@@ -64,7 +64,7 @@ const Category = () => {
         }).then(res=>{
             localStorage.setItem("searchList", JSON.stringify(res.data))
             console.log(JSON.parse(localStorage.getItem("searchList")));
-            window.location.href=`/search/${userId}`
+            window.location.href=`#/search/${userId}`
         })
     }
     const classes = useStyle()

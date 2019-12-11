@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 import Axios from 'axios';
 
 const axios = Axios.create();
-axios.defaults.withCredentials = true;
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -63,7 +63,7 @@ const UserSignUpPage = () => {
         .then(res => {
             if (res.data.ret_code == 0){
                 alert("Success!");
-                window.location.href="/login"
+                window.location.href="#/login"
             }
             else{
                 alert("Signup Failed!")
@@ -146,7 +146,7 @@ const UserSignUpPage = () => {
                     <hr/>
                     <Grid container justify="center">
                         <Grid item className={classes.foot}>
-                            <Link href="/login" variant="body2" className={classes.link}>
+                            <Link href="#/login" variant="body2" className={classes.link}>
                                 Already have an account? Sign in
                             </Link>
                         </Grid>

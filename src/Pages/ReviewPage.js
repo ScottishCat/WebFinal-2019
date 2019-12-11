@@ -112,7 +112,7 @@ const ReviewPage = (props) => {
         }).then(res=>{
             localStorage.setItem("business", JSON.stringify(res.data));
             // console.log(JSON.parse(localStorage.getItem("business")));
-            window.location.href=`/detail/${businessId}/${userId}`
+            window.location.href=`#/detail/${businessId}/${userId}`
         }
         ).catch(err=>console.log(err))
         setSubmit(true);

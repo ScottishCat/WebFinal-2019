@@ -55,10 +55,10 @@ const ReviewList = (props) => {
 
     const onClickHandler = (e) => {
         if (userId !== 'undefined'){
-            window.location.href=`/review/${businessId}/${userId}`
+            window.location.href=`#/review/${businessId}/${userId}`
         }
         else{
-            window.location.href='/login'
+            window.location.href='#/login'
         }
     }
 

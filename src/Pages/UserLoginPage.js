@@ -56,7 +56,7 @@ const UserLoginPage = () => {
         )
         .then(res=>{
             if (res.data.ret_code == 0){
-                window.location.href=`./main/${res.data.id}`
+                window.location.href=`#/main/${res.data.id}`
                 console.log(res.headers)
             }
             else if (res.data.ret_code == 2){
@@ -119,7 +119,7 @@ const UserLoginPage = () => {
                     <hr/>
                     <Grid container justify="center">
                         <Grid item className={classes.foot}>
-                            <Link href='/signup' variant="body2" className={classes.link}>
+                            <Link href='#/signup' variant="body2" className={classes.link}>
                                 Don't have an account? Sign up
                             </Link>
                         </Grid>
