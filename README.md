@@ -41,7 +41,22 @@ There are some functions for customer version.
 #### 3.1.2 Main page
 - Main page includes search bar, gallery and top business by city
 - For visitors and users, the top bar shows in different way
-#### 3.1.3 Review page
+#### 3.1.3 Search page
+- Searching business by name (Note: Fuzzy search is not supported, you have to type in business name correctly, I provided a list of business for test below)
+- testing lists: 
+1. tara (few reviews, good example for testing the effect of reviews on business average stars)
+2. The UPS Store
+3. Baby Cakes
+4. Taco Bell
+5. Marco's Pizza
+#### 3.1.4 Detail page
+- Show business information like name, ratings, address, hours and recommended reviews for this business
+- Google Map API is used for locating business
+#### 3.1.5 Profile page
+- Users can browse all reviews they made and delete them
+#### 3.1.5 Review page
+- Visitors can only browse reviews. 
+- Users can write reviews after login.
 
 ### 3.2 User Backend (Tong Wang)
 
@@ -86,9 +101,9 @@ There are some functions for customer version.
 
 ### 4.1 Front-end
 
-#### 4.1.1 Customized interface for different users
+#### 4.1.1 Customized interface and service for different users
 
-We create 2 types of interface for different users: one is for user and another is for business.
+Visitors should not have the permission to write reviews. Users who signed in should be able to view the reviews they made through profile pages.
 
 #### 4.1.2 Web forms for signup, login, and allow user to create review
 
@@ -96,15 +111,16 @@ The signup/login page, and the page for user to write a review are listed above.
 
 #### 4.1.3 React
 
-We used React to fetch data from database through RESTful web service API.
+We used React as our front-end framework and use Axios to fetch data from database through RESTful web service API.
 
 #### 4.1.4 Material-UI
 
-In order to get responsive and consistent design, we chose Material-UI. We can create responsive pages easily with templates of Material-UI
+In order to get responsive and consistent design, we chose Material-UI(Similar to Bootstrap).
+We can create responsive pages easily with predefined  React Components in Material-UI
 
 #### 4.1.5 Populate with application with data
 
-User can search a specific business with business name, and also, users can browse businesses categorized by cities, and browse business information.
+User can search a specific business with business name, and also, users can browse businesses categorized by cities.
 
 ### 4.2 Backend
 
@@ -115,12 +131,18 @@ We sets different api endpoints to call functions. All endpoints are listed abov
 
 #### 4.2.2 MongoDB (Database)
 
+
 Our database is 8 GB. We uploaded to MongoDB cloud. We created 4 data models in Mongoose:
 
 - BusinessSchema
 - PhotoSchema
 - ReviewSchema
 - UserSchema
+
+We used yelp dataset which contains 6,685,900 reviews, 192,609 businesses and 200,000 pictures
+links to the dataset: https://www.yelp.com/dataset
+
+*Reference: Yelp stars images are used in our project. Links: https://www.yelp.com/developers/display_requirements*
 
 #### 4.2.3 Log-in and Sign-up 
 
@@ -154,10 +176,6 @@ router.post('/login', function(req, res){
       })
 });
 ```
-
-#### 4.2.4 Two roles
-
-One is user role, which can browse all businesses, reviews and add reviews, another is business, which can browser its reviews.
 
 #### 4.2.5 Session management capabilities for managing
 
