@@ -1,68 +1,226 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Report
 
-## Available Scripts
+## Project Name : Yummy, a Yelp clone
 
-In the project directory, you can run:
+## Team Member : 
 
-### `npm start`
+Zhiyu Shen (zhs56@pitt.edu), Tong Wang (tow19@pitt.edu), Wenting Wang (wew77@pitt.edu), Sweta Bhupendra Rawal (swr22@pitt.edu)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1. Introduction
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is a web application called “Yum, a yelp clone” which has two different version (Customer & Business). It provides service for users to search for business and create reviews on businesses, also allows business holders to create a new business, update or delete it, and check customer reviews for its business. 
 
-### `npm test`
+## 2. Objective
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2.1 User (Customer) Version: 
 
-### `npm run build`
+There are some functions for customer version.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Search businesses by name;
+- Browse businesses those have top 5 review counts by city
+- Sign up/login in
+- User login in with Google OAuth
+- Browse the business and its reviews
+- Create, or delete a review for a specific business, update the user review count, business review counts, business stars at the same time
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 2.2 Business Version:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Sign up/login in
+- Browse its reviews
+- Create, update or delete a business
 
-### `npm run eject`
+## 3. Team member's contributions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3.1 User Frontend (Zhiyu Shen)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 3.1.1 Login in/ Sign in Page 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### 3.1.2 Index page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 3.1.3 Review page
 
-## Learn More
+### 3.2 User Backend (Tong Wang)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 3.2.1 All APIs for user 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- POST(‘/login’) : user login and validation identity
+- POST(‘/signup’) : user signin, save new user into databse
+- POST(‘/byBname’) : userpage search business by business name
 
-### Code Splitting
+#### 3.2.2 All APIs for photo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- POST(‘/photoId’) : find photoId by business_id
+- GET(‘/photo/:photo_id’) : get photo by photoID
 
-### Analyzing the Bundle Size
+#### 3.2.3 All APIs for review
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- GET(/review/business/:business_id): get Reviews by a specific business
+- GET(/review/user/:uid): get Reviews by a specific user
+- GET(/review/id/:rid): reviews by a review_id
+- POST(newReview): create a new review, update user review count and business review count 
+- DELETE(/reviewD/:rid): user delete a review and update the review count in user review_counts and business review_counts
 
-### Making a Progressive Web App
+### 3.3 Business Backend and Google Oauth (Wenting Wang)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This part is concluded by 2 parts: First is the business backend. all Apis for business and photo.
 
-### Advanced Configuration
+#### 3.3.1 All Apis for business
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- POST(/cityB): Find 5 business by city name, sort by review counts
+- GET(/business): GET all business information, limit 5
+- GET(/business/id/:business_id): GET a specific business, Business Login System
+- PUT(/business): UPDATE a specific business, just name, address, city, state, hour, is_open could be updated
 
-### Deployment
+#### 3.3.2 All Apis for photo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- GET(/photo/:business_id): Get all photos for a specific Business
+- POST(photo): Create a new phone for a specific photo
+- PUT(/photo/:id): Update a specific photo
+- DELETE(/photo/:id): Delete a specific photo
 
-### `npm run build` fails to minify
+#### 3.3.3 Google Oauth.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 3.4  Business Frontend(Sweta Bhupendra Rawal)
+
+After a business user logs into the system, the business dashboard appears where all the business relevant information can be seen. The dashboard shows,
+
+- Total number of reviews received
+- Average rating that is stars
+- The location description of the business
+- Contact information 
+- Reviews received with the date and time as to when it was received. The business cannot see the which user gave what review. The reviews is limited to 3 reviews.
+
+## 4. Technical Architecture
+
+### 4.1 Front-end
+
+#### 4.1.1 Customized interface for different users
+
+We create 2 types of interface for different users: one is for user and another is for business.
+
+#### 4.1.2 Web forms for signup, login, and allow user to create review
+
+The signup/login page, and the page for user to write a review are listed above.
+
+#### 4.1.3 React
+
+We used React to fetch data from database through RESTful web service API.
+
+#### 4.1.4 Material-UI
+
+In order to get responsive and consistent design, we chose Material-UI. We can create responsive pages easily with templates of Material-UI
+
+#### 4.1.5 Populate with application with data
+
+User can search a specific business with business name, and also, users can browse businesses categorized by cities, and browse business information.
+
+### 4.2 Backend
+
+#### 4.2.1 MVC structure using Node
+
+We seperate the web application into 3 parts: model, view and controller. We chose MongoDB as our database to save data, React for the view part, and Node.js for the controller.
+We sets different api endpoints to call functions. All endpoints are listed above.
+
+#### 4.2.2 MongoDB (Database)
+
+Our database is 8 GB. We uploaded to MongoDB cloud. We created 4 data models in Mongoose:
+
+- BusinessSchema
+- PhotoSchema
+- ReviewSchema
+- UserSchema
+
+#### 4.2.3 Log-in and Sign-up 
+
+We created 2 ways: one is Google OAuth, which is introduced above, and another is secure password with code below 
+
+```
+router.post('/login', function(req, res){
+   User.findOne({email : req.body.email}, function(err, u) {
+        //console.log(req.body)
+        if (err){
+            res.json({err:err})
+        } 
+        else if (u){
+            let id = u['_id']
+            if (u.password === req.body.password) {
+                console.log(id)
+                res.cookie('userId', id,{
+                    maxAge: 6*100000,
+                    httpOnly: false
+                }).json({ret_code: 0, id : id})
+            }
+            else res.json({ret_code: 1, ret_msg: 'password is not correct, try again!'});
+        }
+        else{
+            res.json({ret_code: 2, msg: 'Invalid Email!'})
+        }
+      })
+});
+```
+
+#### 4.2.4 Two roles
+
+One is user role, which can browse all businesses, reviews and add reviews, another is business, which can browser its reviews.
+
+#### 4.2.5 Session management capabilities for managing
+
+After logining the system as user, we saved user_id in cookie, and transfer it between pages.
+
+#### 4.2.6 RESTful Web Service API for CRUD operations
+
+We created lots of RESTful Web Service API for 4 models: business, photo, user and review. All API are listed above.
+
+## 5. Challenges
+
+### 5.1 Deploy Client Side and Server Side on different Computer
+
+We use Cross-origin resource sharing (CORS) to allow Client side on one computer to request data from server side on another computer.
+
+### 5.2 Read Pics from Local Storage
+
+For the Yelp dataset, the pics of business are saved in a file. Thus, we have to read pics from the local storage. The name of pics are the same with photo_id in photo collection. Thus, we need to set:
+
+```
+router.get('/photo/:photo_id', function(req, res){
+    const PATH = '/Users/tongw/Downloads/yelp_photos/photos/'
+     res.sendFile(`${PATH}${req.params.photo_id}.jpg`)
+     console.log(req.params.photo_id)
+})
+```
+
+## 6. Future Work
+
+There are still a lot of work for us to do. For example, we need to Integrate Google OAuth in the System.
+We just get email address in our cookie, what we should do next is to compare the email in the cookie with email in our user collection. If the email exists in our user collection, we will respond with all information of this user. 
+While the email does not exist in our data, we will create a new customer in our user collection with information: name, emails. And when this new customer login in with Google OAuth next time, we will respond with all previous information of this user.
+
+## 7. Conclusion
+
+### 7.1 React is a good choice for the front end but not easy to use
+
+For the front-end UI design, React is a good choice. It facilitates the overall process of writing components. Web application is composed of different components. React divided components into different pages, which makes every component to be manageable. At the same time, react is not easy for fresher since learners have to be more familiar with the structure of react file.
+
+### 7.2 CORS 
+
+In the creation, We used  CORS to deploy different cross-site HTTP requests, and use fetch APIs for our front end. In this way, front-end and backend could develop at the same time on different computers. This is a good way for web application distributed development.
+
+## 8. Documentation
+
+- Alex B., Eve P. (2017), Learning React: Functional Web Development with React and Redux. Retrieved from https://www.imel.ba/edukacija/learningreact1.pdf.
+- Fetching API Data with React.JS. (2017, August). Retrieve December 10, 2019, from https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2.
+- How to fetch data in React. (2018, July). Retrieve December 10, 2019, from https://www.robinwieruch.de/react-fetching-data.
+- React: A JavaScript library for building user interfaces. (2019, December). Retrieve December 10, 2019, https://reactjs.org/.
+- Subbu A. (2010), RESTful Web Services Cookbook. Retrieved from http://webapps.me.uk/download.php?f=restful-web-services-cookbook.pdf.
+
+
+
+
+
+
+
+
+
+
+
+
